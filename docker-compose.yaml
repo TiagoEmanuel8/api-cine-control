@@ -8,7 +8,7 @@ services:
       - db
       - redis
     environment:
-      - DATABASE_URL=postgresql://user:password@db:5432/dbname
+      - DATABASE_URL=postgresql://user:password@db:5432/mksdb
       - REDIS_URL=redis://redis:6379
 
   db:
@@ -16,7 +16,7 @@ services:
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: dbname
+      POSTGRES_DB: mksdb
     ports:
       - "5432:5432"
     volumes:
