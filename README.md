@@ -64,7 +64,7 @@ Conforme os requisitos de tecnologia do projeto, também comentei o tempo de exp
   <a href="https://www.docker.com/">
     <img src="https://img.shields.io/badge/docker-339933?style=for-the-badge&logo=docker&color=gray" />
   </a> - 1 ano e meio de experiência
-</div>
+  </div>
 
 ---
 # Funcionalidades
@@ -87,6 +87,7 @@ Acesse através da rota */login*
 
 **Fluxo de Filmes**:
 acesse através da rota */films*
+
 *Rotas que necessitam login no sistema*
 
 - Cadastrar novo filme
