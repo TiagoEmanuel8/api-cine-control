@@ -2,6 +2,7 @@ import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import helmet from 'helmet';
 
 const PORT = Number(process.env.PORT) || 3001;
 
@@ -31,6 +32,9 @@ async function bootstrap() {
       transform: true,
     }),
   );
+
+  app.use(helmet());
+
   await app.listen(PORT);
 }
 bootstrap();
