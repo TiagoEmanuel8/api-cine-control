@@ -6,7 +6,7 @@ import {
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { UserRepository } from './repositories/users.repository';
-import { PasswordHashService } from 'src/common/encryption/password-hash';
+import { PasswordHashService } from '../../common/encryption/password-hash';
 
 @Injectable()
 export class UsersService {

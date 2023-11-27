@@ -8,7 +8,7 @@ export class CreateUsersTable1700931682799 implements MigrationInterface {
         columns: [
           {
             name: 'id',
-            type: 'integer',
+            type: 'serial',
             isPrimary: true,
           },
           {
@@ -25,6 +25,10 @@ export class CreateUsersTable1700931682799 implements MigrationInterface {
           },
           {
             name: 'password',
+            type: 'varchar',
+          },
+          {
+            name: 'type',
             type: 'varchar',
           },
           {

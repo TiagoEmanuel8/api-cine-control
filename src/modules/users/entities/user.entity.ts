@@ -12,18 +12,21 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ nullable: false })
   name: string;
 
   @Column({ nullable: false, type: 'varchar', length: 255 })
   email: string;
 
-  @Column()
+  @Column({ nullable: false })
   login: string;
 
   @Exclude()
   @Column({ nullable: false })
   password: string;
+
+  @Column({ nullable: false, length: 4 })
+  type: string;
 
   @CreateDateColumn({ type: 'timestamp' })
   created_at: Date;
