@@ -1,73 +1,186 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# Boas vindas ao projeto
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# Sumário
 
-## Description
+- [Apresentação do projeto](#apresentação-do-projeto)
+- [Tecnologias](#tecnologias)
+- [Funcionalidades](#funcionalidades)
+- [Deploy](#deploy)
+- [Instalação e uso](#instalação-e-uso)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+---
 
-## Installation
+#  Apresentação do projeto
+O Diel Calendar é uma aplicação web backend realizada na etapa do teste técnico no processo seletivo da MKS solutions.
 
-```bash
-$ npm install
-```
+---
 
-## Running the app
+# Tecnologias:
+Conforme os requisitos de tecnologia do projeto, também comentei o tempo de experiência com cada stack
 
-```bash
-# development
-$ npm run start
+<div>
+  <a href="https://www.typescriptlang.org/">
+    <img src="https://img.shields.io/badge/typescript-339933?style=for-the-badge&logo=typescript&color=gray" />
+  </a> - 1 ano e meio de experiência
+ </div>
+ <div>
+  <a href="https://javascript.info/">
+    <img src="https://img.shields.io/badge/javascript-339933?style=for-the-badge&logo=javascript&color=gray" />
+  </a> - 2 anos de experiência
+  </div>
+   <div>
+  <a href="https://docs.npmjs.com/">
+    <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&color=gray" />
+  </a> - 2 anos de experiência
+ </div>
+  <div>
+  <a href="https://nestjs.com/">
+    <img src="https://img.shields.io/badge/nest-339933?style=for-the-badge&logo=nestjs&color=gray" /> 
+  </a> - 1 ano e meio de experiência
+   </div>
+  <a href="https://typeorm.io/">
+    <img src="https://img.shields.io/badge/typeorm-339933?style=for-the-badge&logo=typeorm&color=gray" />
+  </a> - Meio ano de experiência
+   </div>
+   <div>
+   <a href="https://www.postgresql.org">
+    <img src="https://img.shields.io/badge/postgresql-339933?style=for-the-badge&logo=postgresql&color=gray" />
+  </a> - 1 ano e meio de experiência
+  </div>
+   <div>
+   <a href="https://redis.io/">
+    <img src="https://img.shields.io/badge/redis-339933?style=for-the-badge&logo=redis&color=gray" />
+  </a> - 1 ano e meio de experiência
+  </div>
+  <div>
+  <a href="https://swagger.io/">
+    <img src=" https://img.shields.io/badge/swagger-339933?style=for-the-badge&logo=swagger&color=gray" />  [swagger]
+  </a> - 1 ano  de experiência
+  </div>
+  <div>
+  <a href="https://www.docker.com/">
+    <img src="https://img.shields.io/badge/docker-339933?style=for-the-badge&logo=docker&color=gray" />
+  </a> - 1 ano e meio de experiência
+</div>
 
-# watch mode
-$ npm run start:dev
 
-# production mode
-$ npm run start:prod
-```
+# Funcionalidades
 
-## Test
+**Fluxo de Usuarios**
+- Cadastrar um novo usuario
 
-```bash
-# unit tests
-$ npm run test
+- Cadastrar novo usuário
+- Listar todos os usuários
+- Listar um usuário específico
+- Editar um usuário
+- Excluir usuário
 
-# e2e tests
-$ npm run test:e2e
 
-# test coverage
-$ npm run test:cov
-```
+**Fluxo de Login**
+- Realizar Login no sistema
 
-## Support
+**Fluxo de Filmes**
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+*Rotas que necessitam login no sistema*
 
-## Stay in touch
+- Cadastrar novo filme
+- Listar todos os filmes
+- Listar um filme específico
+- Editar um filme
+- Excluir filme
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
-## License
+---
+# Deploy:
+Para o deploy utilizei a plataforma [Railway](https://railway.app/)
 
-Nest is [MIT licensed](LICENSE).
+link:
+[mks-challenge.up.railway.app](https://mks-challenge.up.railway.app/)
+
+---
+# Instalação e uso
+
+Para executar o projeto sua máquina deve satisfazer os requisitos abaixo.  
+  
+Pré-requisitos  
+  
+```  
+- node v18.16.0  
+- npm v9.5.1  
+- git version v2.34.1  
+  
+```  
+  
+[Download node js](https://nodejs.org/en/)  
+  
+[Download git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)  
+  
+### Clonando o projeto  
+  
+Digite o comando abaixo para clonar o projeto.  
+  
+```  
+git clone https://github.com/TiagoEmanuel8/EnaFood.git
+  
+```  
+  
+Entre na pasta  
+  
+```  
+cd EnaFood
+  
+```  
+### Executando o projeto com **docker**
+
+<details>
+
+<summary>Clique para exibir os detalhes</summary>
+
+
+### Execute o comando abaixo para iniciar o docker  
+  
+```  
+docker-compose up -d
+```  
+### Execute o projeto  
+  em ambos os terminais digite
+```  
+npm start  
+```  
+ou
+```  
+npm run nodemon  
+```  
+
+### Caso queira parar a execução do docker use o comando
+  
+```  
+docker-compose down --rmi local --volumes --remove-orphans
+```  
+
+</details>
+
+### Executando o projeto **localmente**
+
+<details>
+
+<summary>Clique para exibir os detalhes</summary>
+  
+### Instale as dependências  
+  
+```  
+npm install  
+```  
+### Execute o projeto  
+  
+```  
+npm start  
+```  
+ou
+``` 
+npm run nodemon  
+``` 
+</details>
+
+---
