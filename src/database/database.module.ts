@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Film } from 'src/modules/films/entities/film.entity';
 import { User } from 'src/modules/users/entities/user.entity';
 import { DataSourceOptions } from 'typeorm';
 
@@ -10,7 +11,7 @@ export const dataSourceOptions: DataSourceOptions = {
   username: 'postgres',
   password: 'senha123',
   database: 'mksdb',
-  entities: [User],
+  entities: [User, Film],
   synchronize: false,
 };
 
