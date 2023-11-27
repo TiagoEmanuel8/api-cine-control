@@ -3,7 +3,9 @@ import {
   Injectable,
   NotFoundException,
   UnauthorizedException,
+  Inject,
 } from '@nestjs/common';
+import Redis from 'ioredis';
 import { CreateFilmDto } from './dto/create-film.dto';
 import { UpdateFilmDto } from './dto/update-film.dto';
 import { FilmRepository } from './repositories/film.repository';
@@ -11,10 +13,12 @@ import { FilmDto } from './dto/user-response.dto';
 
 @Injectable()
 export class FilmsService {
-  constructor(private readonly repository: FilmRepository) {}
+  constructor(
+    @Inject('REDIS_CLIENT') private readonly redisClient: Redis,
+    private readonly repository: FilmRepository,
+  ) {}
 
   async create(createFilmDto: CreateFilmDto, userReq: any) {
-    console.log(userReq);
     if (userReq.type !== 'adm') {
       throw new UnauthorizedException(
         'You are not authorized to create a film',
@@ -29,7 +33,15 @@ export class FilmsService {
   }
 
   async findAll(): Promise<FilmDto[]> {
+    const cacheKey = 'films_all';
+    const cached = await this.redisClient.get(cacheKey);
+
+    if (cached) {
+      return JSON.parse(cached);
+    }
+
     const films = await this.repository.findAll();
+    await this.redisClient.set(cacheKey, JSON.stringify(films), 'EX', 3600);
     return films;
   }
 
