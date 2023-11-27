@@ -6,13 +6,15 @@
 - [Apresentação do projeto](#apresentação-do-projeto)
 - [Tecnologias](#tecnologias)
 - [Funcionalidades](#funcionalidades)
+- [Cache](#cache)
+- [Documentação](#documentação)
 - [Deploy](#deploy)
 - [Instalação e uso](#instalação-e-uso)
 
 ---
 
 #  Apresentação do projeto
-O Diel Calendar é uma aplicação web backend realizada na etapa do teste técnico no processo seletivo da MKS solutions.
+O Diel Calendar é uma aplicação web backend realizada na etapa do teste técnico no processo seletivo da MKS sistemas.
 
 ---
 
@@ -64,10 +66,12 @@ Conforme os requisitos de tecnologia do projeto, também comentei o tempo de exp
   </a> - 1 ano e meio de experiência
 </div>
 
-
+---
 # Funcionalidades
 
-**Fluxo de Usuarios**
+**Fluxo de Usuarios**:
+Acesse atravé da rota */users*
+
 - Cadastrar um novo usuario
 
 - Cadastrar novo usuário
@@ -77,11 +81,12 @@ Conforme os requisitos de tecnologia do projeto, também comentei o tempo de exp
 - Excluir usuário
 
 
-**Fluxo de Login**
+**Fluxo de Login**:
+Acesse através da rota */login*
 - Realizar Login no sistema
 
-**Fluxo de Filmes**
-
+**Fluxo de Filmes**:
+acesse através da rota */films*
 *Rotas que necessitam login no sistema*
 
 - Cadastrar novo filme
@@ -90,6 +95,17 @@ Conforme os requisitos de tecnologia do projeto, também comentei o tempo de exp
 - Editar um filme
 - Excluir filme
 
+---
+# Cache
+Utilizei o [Redis](https://redis.io/) para realizar o cache e aumentar peformance da aplicação
+
+*Obs: configurei o redis com o tempo armazenamento chave/valor de 1 hora*
+
+---
+# Documentação
+O projeto foi documentado com **Swagger**, acesse a rota **/api** para ver as rotas que a aplicação possui
+
+*obs: o arquivo **Insomnia_2023-11-27.json** presente na raiz do projeto pode ser carregado no [Insomnia](https://insomnia.rest/) com as rotas e valores também prontos para realizar as requisições*
 
 ---
 # Deploy:
@@ -121,16 +137,22 @@ Pré-requisitos
 Digite o comando abaixo para clonar o projeto.  
   
 ```  
-git clone https://github.com/TiagoEmanuel8/EnaFood.git
+git clone https://github.com/TiagoEmanuel8/mks-challenge.git
   
 ```  
   
 Entre na pasta  
   
 ```  
-cd EnaFood
+cd mks-challenge
   
+```
+
+Crie um arquivo *.env* na raiz do projeto e preencha com os valores 
 ```  
+Obs: na raiz do projeto existe um modelo pré pronto contendo nomes das variáveis de ambiente necessárias para o projeto funcionar corretamente
+```
+
 ### Executando o projeto com **docker**
 
 <details>
@@ -144,13 +166,13 @@ cd EnaFood
 docker-compose up -d
 ```  
 ### Execute o projeto  
-  em ambos os terminais digite
+  use o comando:
 ```  
 npm start  
 ```  
 ou
 ```  
-npm run nodemon  
+npm run start:dev  
 ```  
 
 ### Caso queira parar a execução do docker use o comando
@@ -179,7 +201,7 @@ npm start
 ```  
 ou
 ``` 
-npm run nodemon  
+npm run start:dev  
 ``` 
 </details>
 
