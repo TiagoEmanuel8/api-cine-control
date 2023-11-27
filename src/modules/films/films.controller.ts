@@ -14,11 +14,24 @@ import { FilmsService } from './films.service';
 import { CreateFilmDto } from './dto/create-film.dto';
 import { UpdateFilmDto } from './dto/update-film.dto';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { ApiBearerAuth, ApiResponse, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('films')
+@ApiBearerAuth('access-token')
 @Controller('films')
 export class FilmsController {
   constructor(private readonly filmsService: FilmsService) {}
 
+  @UseGuards(JwtAuthGuard)
+  @ApiResponse({ status: 200 })
+  @ApiResponse({
+    status: 401,
+    description: 'You are not authorized to create a film',
+  })
+  @ApiResponse({
+    status: 401,
+    description: 'film already exists',
+  })
   @Post()
   create(@Body() createFilmDto: CreateFilmDto, @Req() request) {
     return this.filmsService.create(createFilmDto, request);
@@ -31,19 +44,47 @@ export class FilmsController {
   }
 
   @UseGuards(JwtAuthGuard)
+  @ApiResponse({
+    status: 404,
+    description: 'Film is not found',
+  })
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.filmsService.findOne(+id);
   }
 
+  @UseGuards(JwtAuthGuard)
+  @ApiResponse({ status: 200 })
+  @ApiResponse({
+    status: 401,
+    description: 'You are not authorized to create a film',
+  })
+  @ApiResponse({
+    status: 404,
+    description: 'Film is not found',
+  })
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateFilmDto: UpdateFilmDto) {
-    return this.filmsService.update(+id, updateFilmDto);
+  update(
+    @Param('id') id: string,
+    @Body() updateFilmDto: UpdateFilmDto,
+    @Req() request,
+  ) {
+    return this.filmsService.update(+id, updateFilmDto, request);
   }
 
+  @UseGuards(JwtAuthGuard)
+  @ApiResponse({ status: 204 })
+  @ApiResponse({
+    status: 401,
+    description: 'You are not authorized to create a film',
+  })
+  @ApiResponse({
+    status: 404,
+    description: 'Film is not found',
+  })
   @HttpCode(204)
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.filmsService.remove(+id);
+  remove(@Param('id') id: string, @Req() request) {
+    return this.filmsService.remove(+id, request);
   }
 }

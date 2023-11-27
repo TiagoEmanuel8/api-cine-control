@@ -47,17 +47,29 @@ export class FilmsService {
 
   async findOne(id: number) {
     const user = await this.repository.findOne(id);
-    if (!user) throw new NotFoundException(`Film ${id} is not found`);
+    if (!user) throw new NotFoundException(`Film is not found`);
     return user;
   }
 
-  async update(id: number, updateFilmDto: UpdateFilmDto) {
+  async update(id: number, updateFilmDto: UpdateFilmDto, userReq: any) {
+    if (userReq.type !== 'adm') {
+      throw new UnauthorizedException(
+        'You are not authorized to create a film',
+      );
+    }
+
     const film = await this.repository.findOne(id);
-    if (!film) throw new NotFoundException(`Film ${id} is not found`);
+    if (!film) throw new NotFoundException(`Film is not found`);
     return await this.repository.update(id, updateFilmDto);
   }
 
-  async remove(id: number) {
+  async remove(id: number, userReq: any) {
+    if (userReq.type !== 'adm') {
+      throw new UnauthorizedException(
+        'You are not authorized to create a film',
+      );
+    }
+
     const user = await this.repository.findOne(id);
     if (!user) throw new NotFoundException(`Film ${id} is not found`);
     await this.repository.remove(id);
