@@ -2,6 +2,7 @@ import {
   ConflictException,
   Injectable,
   NotFoundException,
+  UnauthorizedException,
 } from '@nestjs/common';
 import { CreateFilmDto } from './dto/create-film.dto';
 import { UpdateFilmDto } from './dto/update-film.dto';
@@ -12,7 +13,14 @@ import { FilmDto } from './dto/user-response.dto';
 export class FilmsService {
   constructor(private readonly repository: FilmRepository) {}
 
-  async create(createFilmDto: CreateFilmDto) {
+  async create(createFilmDto: CreateFilmDto, userReq: any) {
+    console.log(userReq);
+    if (userReq.type !== 'adm') {
+      throw new UnauthorizedException(
+        'You are not authorized to create a film',
+      );
+    }
+
     const { title } = createFilmDto;
     const verifyFilm = await this.repository.verifyExisteField(title);
     if (verifyFilm) throw new ConflictException('film already exists');

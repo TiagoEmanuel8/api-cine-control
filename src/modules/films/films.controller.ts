@@ -7,25 +7,30 @@ import {
   Param,
   Delete,
   HttpCode,
+  UseGuards,
+  Req,
 } from '@nestjs/common';
 import { FilmsService } from './films.service';
 import { CreateFilmDto } from './dto/create-film.dto';
 import { UpdateFilmDto } from './dto/update-film.dto';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
 @Controller('films')
 export class FilmsController {
   constructor(private readonly filmsService: FilmsService) {}
 
   @Post()
-  create(@Body() createFilmDto: CreateFilmDto) {
-    return this.filmsService.create(createFilmDto);
+  create(@Body() createFilmDto: CreateFilmDto, @Req() request) {
+    return this.filmsService.create(createFilmDto, request);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Get()
   findAll() {
     return this.filmsService.findAll();
   }
 
+  @UseGuards(JwtAuthGuard)
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.filmsService.findOne(+id);
