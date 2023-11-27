@@ -8,8 +8,8 @@ services:
       - db
       - redis
     environment:
-      - DATABASE_URL=postgresql://user:password@db:5432/mksdb
-      - REDIS_URL=redis://redis:6379
+      - DATABASE_URL=${DATABASE_URL}
+      - REDIS_URL=${REDIS_URL}
 
   db:
     image: postgres:15.1
