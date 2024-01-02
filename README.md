@@ -8,13 +8,12 @@
 - [Funcionalidades](#funcionalidades)
 - [Cache](#cache)
 - [Documentação](#documentação)
-- [Deploy](#deploy)
 - [Instalação e uso](#instalação-e-uso)
 
 ---
 
 #  Apresentação do projeto
-O Diel Calendar é uma aplicação web backend realizada na etapa do teste técnico no processo seletivo da MKS sistemas.
+Essa API tem como objetivo o gerenciamento backend de um site de filmes utilizando tecnologias como Nest, Typescript, Docker, Redis entre outras tecnologias
 
 ---
 
@@ -24,12 +23,12 @@ Conforme os requisitos de tecnologia do projeto, também comentei o tempo de exp
 <div>
   <a href="https://www.typescriptlang.org/">
     <img src="https://img.shields.io/badge/typescript-339933?style=for-the-badge&logo=typescript&color=gray" />
-  </a> - 1 ano e meio de experiência
+  </a>
  </div>
  <div>
   <a href="https://javascript.info/">
     <img src="https://img.shields.io/badge/javascript-339933?style=for-the-badge&logo=javascript&color=gray" />
-  </a> - 2 anos de experiência
+  </a>
   </div>
    <div>
   <a href="https://docs.npmjs.com/">
@@ -39,31 +38,31 @@ Conforme os requisitos de tecnologia do projeto, também comentei o tempo de exp
   <div>
   <a href="https://nestjs.com/">
     <img src="https://img.shields.io/badge/nest-339933?style=for-the-badge&logo=nestjs&color=gray" /> 
-  </a> - 1 ano e meio de experiência
+  </a>
    </div>
   <a href="https://typeorm.io/">
     <img src="https://img.shields.io/badge/typeorm-339933?style=for-the-badge&logo=typeorm&color=gray" />
-  </a> - Meio ano de experiência
+  </a>
    </div>
    <div>
    <a href="https://www.postgresql.org">
     <img src="https://img.shields.io/badge/postgresql-339933?style=for-the-badge&logo=postgresql&color=gray" />
-  </a> - 1 ano e meio de experiência
+  </a>
   </div>
    <div>
    <a href="https://redis.io/">
     <img src="https://img.shields.io/badge/redis-339933?style=for-the-badge&logo=redis&color=gray" />
-  </a> - 1 ano e meio de experiência
+  </a>
   </div>
   <div>
   <a href="https://swagger.io/">
     <img src=" https://img.shields.io/badge/swagger-339933?style=for-the-badge&logo=swagger&color=gray" />  [swagger]
-  </a> - 1 ano  de experiência
+  </a>
   </div>
   <div>
   <a href="https://www.docker.com/">
     <img src="https://img.shields.io/badge/docker-339933?style=for-the-badge&logo=docker&color=gray" />
-  </a> - 1 ano e meio de experiência
+  </a>
   </div>
 
 ---
@@ -109,13 +108,7 @@ O projeto foi documentado com **Swagger**, acesse a rota **/api** para ver as ro
 *obs: o arquivo **Insomnia_2023-11-27.json** presente na raiz do projeto pode ser carregado no [Insomnia](https://insomnia.rest/) com as rotas e valores também prontos para realizar as requisições*
 
 ---
-# Deploy:
-Para o deploy utilizei a plataforma [Railway](https://railway.app/)
 
-link:
-[mks-challenge.up.railway.app](https://mks-challenge.up.railway.app/)
-
----
 # Instalação e uso
 
 Para executar o projeto sua máquina deve satisfazer os requisitos abaixo.  
@@ -138,14 +131,14 @@ Pré-requisitos
 Digite o comando abaixo para clonar o projeto.  
   
 ```  
-git clone https://github.com/TiagoEmanuel8/mks-challenge.git
+git clone https://github.com/TiagoEmanuel8/api-cine-control.git
   
 ```  
   
 Entre na pasta  
   
 ```  
-cd mks-challenge
+cd api-cine-control
   
 ```
 
